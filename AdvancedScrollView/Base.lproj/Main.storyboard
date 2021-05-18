@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jhN-ve-51f">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AdvancedScrollView" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,10 +26,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdP-Zs-fFw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="1000" id="ecJ-iV-qya"/>
+                                                            <constraint firstAttribute="height" constant="100" id="ecJ-iV-qya"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfR-4V-CF2">
+                                                        <rect key="frame" x="0.0" y="100" width="414" height="900"/>
+                                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="900" id="Gb8-HX-mic"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -64,8 +71,33 @@
                             <constraint firstItem="aEl-NC-rER" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="x0j-de-B6d"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Home" id="Yal-Ss-qFu"/>
+                    <connections>
+                        <outlet property="hieghtOfViewone" destination="ecJ-iV-qya" id="mlc-0V-Hyl"/>
+                        <outlet property="hieghtofviewtwo" destination="Gb8-HX-mic" id="qSq-vZ-4tb"/>
+                        <outlet property="viewOne" destination="OdP-Zs-fFw" id="u35-mg-p6U"/>
+                        <outlet property="viewTwo" destination="qfR-4V-CF2" id="vQz-yT-LQc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="73"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IFD-K0-VXL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jhN-ve-51f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="owb-WU-pRS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Czt-Zs-7mH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUr-ZT-LYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="72.991071428571431"/>
         </scene>
@@ -73,6 +105,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
